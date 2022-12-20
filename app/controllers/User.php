@@ -5,7 +5,9 @@
         public function login(){
             $this->view('Home/login');
         }
-
+        public function book(){
+            $this->view('booking/book');
+        }
     }
 
 ?>
