@@ -11,6 +11,9 @@
         public function book(){
             $this->view('booking/book');
         }
+        public function Dashboard(){
+            $this->view('Admin/Dashboard');
+        }
     }
 
 ?>
