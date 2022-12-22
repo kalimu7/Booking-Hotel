@@ -5,6 +5,9 @@
         public function login(){
             $this->view('Home/login');
         }
+        public function sign(){
+            $this->view('Home/Signup');
+        }
         public function book(){
             $this->view('booking/book');
         }

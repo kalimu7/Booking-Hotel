@@ -9,9 +9,8 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Booking Page</title>
     <link rel="stylesheet" href="http://localhost/Hotel/public/css/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg fixed-top" style="z-index:10;">
         <div class="container">
@@ -47,7 +46,6 @@
             </div>
         </div>
     </nav>
-
     <div id="carouselExampleIndicators" class="carousel slide" style="z-index:5;" data-bs-ride="true">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -93,33 +91,170 @@
                     max="2023-12-20">
             </div>
             <div class="date" data-provide="datepicker">
-                <label for="">Adult</label>
+                <label for="">Chmabre</label>
+                <select class="form-select" aria-label="Default select example" id="chambre">
+                    <option selected value="0">Lit single</option>
+                    <option value="1">double</option>
+                    <option value="2">suite</option>
+                </select>
+            </div>
+            <div class="date" data-provide="datepicker" id="children">
+                <label for="">Suite</label>
                 <select class="form-select" aria-label="Default select example">
-                    <option selected>03</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option selected>Standard suite rooms</option>
+                    <option value="1">Junior</option>
+                    <option value="2">Presidential suite</option>
+                    <option value="3">Penthouse suites</option>
+                    <option value="4">Honeymoon suites</option>
+                    <option value="5">Bridal suites</option>
+                </select>
+            </div>
+            <div class="date" data-provide="datepicker" id="suite">
+                <label for="">Person</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>01</option>
+                    <option value="1">02</option>
+                    <option value="2">03</option>
+                    <option value="3">04</option>
+                    <option value="3">05</option>
+                    <option value="3">06</option>
                 </select>
             </div>
             <div class="date" data-provide="datepicker">
-                <label for="">Children</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>02</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-            <div class="date" data-provide="datepicker">
-            <button type="button" class="btn bknow">BOOK NOW</button>
+                <button type="button" class="btn bknow">Search</button>
             </div>
         </div>
+        
     </form>
-    <!-- ****booking section******** -->
+    <!-- ****End of booking section******** -->
+    <!-- *****************More content************* -->
+    <div class="bg-image d-flex justify-content-center align-items-center">
+        <div class="col-sm-8">
+            <div class="card bg-dark text-white" style="--bs-bg-opacity: .8; height:400px;">
+                <div class="card-body text-center d-flex flex-column justify-content-between">
+                    <hr>
+                    <div>
+                        <h2 class="card-title fs-1 " style="font-family:Arial;">The Vocation Heaven</h2>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.With
+                            supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <a href="#" class="btn more">Road More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- *****************More content************* -->
+    <!-- *****************choose a room***************** -->
+    <div class="text-center hrrr">
+        <hr>
+        <h2 style="color: #363636; "> Choose a room</h2>
+        <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugit harum numquam deleniti minus
+            porro maiores atque iure,<br> hic similique dolorum laboriosam rerum impedit sapiente possimus explicabo
+            velit!</p>
+    </div>
+    <div class="row my-2 justify-content-center">
+        <div class="col-sm-3 imggg m-2">
+            <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
+                $150/night</p>
+            <div class="card ">
+                <div class="card-body bg-dark text-white" style="--bs-bg-opacity:0.9; height:200px; ">
+                    <hr>
+                    <h4>Deluxe Room</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="BookNow text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 imggg m-2">
+            <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
+                $150/night</p>
+            <div class="card ">
+                <div class="card-body bg-dark text-white" style="--bs-bg-opacity:0.9; height:200px; ">
+                    <hr>
+                    <h4>Double suite</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="BookNow text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 imggg m-2">
+            <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
+                $150/night</p>
+            <div class="card ">
+                <div class="card-body bg-dark text-white" style="--bs-bg-opacity:0.9; height:200px; ">
+                    <hr>
+                    <h4>Single Room</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="BookNow text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- ******************about us***************** -->
+    <div class="text-center hrrr">
+        <hr>
+        <h2 style="color: #363636; "> About us</h2>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center gap-6" style="margin:80px 0; ">
+            <div class="col-12 col-sm-6 d-flex flex-column justify-content-between">
+                <h3 style="color: #363636; margin-top:10px; font-size: 48px;"> A Place to Remember</h3>
+                <p class="about">
+                    The Pestana CR7 Marrakech is a new hotel in Marrakesh,Morocco. Located on M Avenue, it is a
+                    sophisticated oasis in the exotic atmosphere of one of the most iconic cities in Africa, right next
+                    to
+                    the desert.
+                    A short distance from the city’s old town, the new Pestana CR7 Marrakech offers an exceptional
+                    comfort
+                    and an atmosphere inspired by Moroccan customs, with bright, , spacious and romantic environments,
+                    perfect for a stay fit for a king.
+                </p>
+                <a href="#" class="abouta text-center" style="margin-bottom:20px;">Book Now</a>
+            </div>
+            <div class="col-12  col-sm-6">
+                <img src="http://localhost/Hotel/public/assets/about.jpg" width="450px" height="380px" alt="">
+            </div>
+
+        </div>
+    </div>
+    <!-- ******************End about us***************** -->
+    <!-- ****************footer************** -->
+    <footer class="footer row">
+        <div class="col-12   col-lg-3 p-5">
+            <img  src="http://localhost/Hotel/public/assets/logo.png" width="120px" style="margin-bottom:10px;"> <br>
+            <!-- <h4 class="text-white mb-10" >The Pestana CR7</h4> -->
+            <p style="line-height: 2.1;font-weight: 400;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea vel temporibus nihil necessitatibus, adipisicing elit.
+            </p>
+            
+        </div>
+        <div class="col-12   col-lg-3 p-5 mt-4">
+            <h4 class="text-white mb-5" >Find us on the map</h4>
+            <img src="http://localhost/Hotel/public/assets/footer-map.png" width="250px"  alt="" srcset=""> 
+        </div>
+        <div class="col-12  col-lg-3 p-5 mt-4">
+            <h4 class="text-white mb-5" >Services</h4>
+             <p> <i class="fa-solid fa-dumbbell  "></i> Fitness Center</p>
+             <p><i class="fa-sharp fa-solid fa-water-ladder   "></i>Swiming Pool</p>
+             <p><i class="fa-solid fa-shower   "></i>Shower</p>
+             <p><i class="fa-solid fa-wifi   "></i>Free Wifi</p>
+        </div>
+        <div class="col-12  col-lg-3 p-5 mt-4">
+            <h4 class="text-white mb-5" >Subcribe to our newsletter</h4>
+            <form action="">
+            <input type="email" placeholder="Your Feedback please" > <br>
+            <button type="submit ">Subscribe</button>
+            </form>
+        </div>
+        <p class="text-center my-2">Copyright ©2022 All rights reserved | This template is made by Kalimu</p>
+    </footer>
+    <!-- ****************footer************** -->
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
-
+    <script src="http://localhost/Hotel/public/JS/DynForm.js"></script>
 </body>
 
 </html>
