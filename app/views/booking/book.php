@@ -153,7 +153,7 @@
             velit!</p>
     </div>
     <div class="row my-2 justify-content-center">
-        <div class="col-sm-3 imggg m-2">
+        <div class="col-10 col-sm-3 imggg m-2">
             <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
                 $150/night</p>
             <div class="card ">
@@ -165,7 +165,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3 imggg m-2">
+        <div class="col-10 col-sm-3 imggg m-2">
             <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
                 $150/night</p>
             <div class="card ">
@@ -177,7 +177,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3 imggg m-2">
+        <div class="col-10 col-sm-3 imggg m-2">
             <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
                 $150/night</p>
             <div class="card ">
