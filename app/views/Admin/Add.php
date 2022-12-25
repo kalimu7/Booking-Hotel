@@ -46,56 +46,51 @@
         </div>
     </nav>
     <div class="container" style=" margin-top:100px;">
-        <form action="http://localhost/Hotel/public/Admin/addroom" method="POST"
-            enctype="multipart/form-data" class="mx-auto" style="width:400px;">
+        <form action="http://localhost/Hotel/public/Admin/addroom" method="POST" enctype="multipart/form-data"
+            class="mx-auto" style="width:400px;">
             <?php
+            // if(isset($data)){
+            //     // echo '<span class=" text-danger">'. $data.'</span>';     
+            // }
             if(isset($data['msg'])){
-                echo '<span class=" text-danger">'.$data['msg'].'</span>';     
-            }
-            if(isset($data['message'])){
-                echo '<span class="text-success">'.$data['message'].'</span>'; 
+                echo '<span class="text-success">'.$data['msg'].'</span>'; 
             }
             ?>
-                <div class="mb-3">
-                <h2>Add New Room</h2>
-                    <label for="chambre">Room Type</label>
-                    <select class="form-select" aria-label="Default select example " id="room" name="room">
-                        <option selected value="single">Lit single</option>
-                        <option value="double">double</option>
-                        <option value="suite">suite</option>
-                    </select>
-                </div>
-                <div class="mb-3" id="suite">
-                    <label for="">Suite</label>
-                    <select class="form-select" aria-label="Default select example " name="suite">
-                        <option selected>Standard suite rooms</option>
-                        <option value="Junior">Junior</option>
-                        <option value="Presidential suite">Presidential suite</option>
-                        <option value="Penthouse suites">Penthouse suites</option>
-                        <option value="Honeymoon suites">Honeymoon suites</option>
-                        <option value="Bridal suites">Bridal suites</option>
-                    </select>
-                </div>
-            
             <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Capcity</label>
-            <input type="text" name="capacity" class="form-control" id="capacity" readonly>
+                <h2>Add New Room</h2>
+                <label for="chambre">Room Type</label>
+                <select class="form-select" aria-label="Default select example " id="room" name="room">
+                    <option selected value="single">Lit single</option>
+                    <option value="double">double</option>
+                    <option value="suite">suite</option>
+                </select>
             </div>
-            
+            <div class="mb-3" id="suite">
+                <label for="">Suite</label>
+                <select class="form-select" aria-label="Default select example " name="suite" id="suite_select">
+                    <option selected>Standard suite rooms</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Presidential suite">Presidential suite</option>
+                    <option value="Penthouse suites">Penthouse suites</option>
+                    <option value="Honeymoon suites">Honeymoon suites</option>
+                    <option value="Bridal suites">Bridal suites</option>
+                </select>
+            </div>
 
-            <label for="">Person</label>
-            <select class="form-select" aria-label="Default select example" name="capacity" id="Person" >
-                <option value="10"></option>
-                <option value="1">01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-                <option value="6">06</option>
-            </select>
+            <div class="mb-3 bigCapacity">
+                <label for="exampleInputPassword1" class="form-label">Capcity</label>
+                <input type="text" name="capacity" class="form-control" id="capacity" readonly>
+            </div>
 
-            
-
+            <div class="bigPerson">
+                <label for="">Person</label>
+                <select class="form-select" aria-label="Default select example" name="capacity" id="Person">
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                </select>
+            </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Price</label>
                 <input type="text" name="price" class="form-control" id="exampleInputPassword1">
@@ -103,7 +98,7 @@
 
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Description</label>
-                <input type="text" name="description" class="form-control" id="exampleInputPassword1">
+                <input type="text" name="description" class="form-control" id="exampleInputPassword1" maxlength="50" >
             </div>
 
             <div class="mb-3">
@@ -114,34 +109,37 @@
             <div class="d-flex my-3">
                 <button type="submit" name="submit" class="btn btn-primary mx-3">ADD New Room</button> <br>
                 <br>
-                <a class="btn btn-danger" href="">back to dashboard</a>
+                <a class="btn btn-danger" href="http://localhost/Hotel/public/Admin/display">back to dashboard</a>
+                
             </div>
         </form>
+        <button id="checkerbtn" >check names</button>
     </div>
-            <!-- ****************footer************** -->
-            <footer class="footer row">
+    <!-- ****************footer************** -->
+    <footer class="footer row">
         <div class="col-12   col-lg-3 p-5">
-            <img  src="http://localhost/Hotel/public/assets/logo.png" width="120px" style="margin-bottom:10px;"> <br>
+            <img src="http://localhost/Hotel/public/assets/logo.png" width="120px" style="margin-bottom:10px;"> <br>
             <!-- <h4 class="text-white mb-10" >The Pestana CR7</h4> -->
-            <p style="line-height: 2.1;font-weight: 400;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea vel temporibus nihil necessitatibus, adipisicing elit.
+            <p style="line-height: 2.1;font-weight: 400;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea
+                vel temporibus nihil necessitatibus, adipisicing elit.
             </p>
         </div>
         <div class="col-12   col-lg-3 p-5 mt-4">
-            <h4 class="text-white mb-5" >Find us on the map</h4>
-            <img src="http://localhost/Hotel/public/assets/footer-map.png" width="250px"  alt="" srcset=""> 
+            <h4 class="text-white mb-5">Find us on the map</h4>
+            <img src="http://localhost/Hotel/public/assets/footer-map.png" width="250px" alt="" srcset="">
         </div>
         <div class="col-12  col-lg-3 p-5 mt-4">
-            <h4 class="text-white mb-5" >Services</h4>
-             <p> <i class="fa-solid fa-dumbbell  "></i> Fitness Center</p>
-             <p><i class="fa-sharp fa-solid fa-water-ladder   "></i>Swiming Pool</p>
-             <p><i class="fa-solid fa-shower   "></i>Shower</p>
-             <p><i class="fa-solid fa-wifi   "></i>Free Wifi</p>
+            <h4 class="text-white mb-5">Services</h4>
+            <p> <i class="fa-solid fa-dumbbell  "></i> Fitness Center</p>
+            <p><i class="fa-sharp fa-solid fa-water-ladder   "></i>Swiming Pool</p>
+            <p><i class="fa-solid fa-shower   "></i>Shower</p>
+            <p><i class="fa-solid fa-wifi   "></i>Free Wifi</p>
         </div>
         <div class="col-12  col-lg-3 p-5 mt-4">
-            <h4 class="text-white mb-5" >Subcribe to our newsletter</h4>
+            <h4 class="text-white mb-5">Subcribe to our newsletter</h4>
             <form action="">
-            <input type="email" placeholder="Your Feedback please" > <br>
-            <button type="submit ">Subscribe</button>
+                <input type="email" placeholder="Your Feedback please"> <br>
+                <button type="submit ">Subscribe</button>
             </form>
         </div>
         <p class="text-center my-2">Copyright ©2022 All rights reserved | This template is made by Kalimu</p>
@@ -151,4 +149,5 @@
     <script src="http://localhost/Hotel/public/JS/Add.js"></script>
 
 </body>
+
 </html>

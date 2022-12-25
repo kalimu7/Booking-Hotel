@@ -117,7 +117,7 @@
                 <div class="row my-5">
                     <div class="d-flex justify-content-between align-items-center" >
                         <h3 class="fs-4 mb-3">Rooms</h3>
-                        <a href="#" class="text-light btn btn-secondary ">Add New Room</a>
+                        <a href="http://localhost/Hotel/public/Admin/add" class="text-light btn btn-secondary ">Add New Room</a>
                     </div>
                     <div class="col">
                         <table class="table bg-white rounded shadow-sm  table-hover">
@@ -134,19 +134,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php foreach ($data as $room) { ?>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Television</td>
-                                    <td>Jonny</td>
-                                    <td>$1200</td>
-                                    <td>$1200</td>
-                                    <td>$1200</td>
-                                    <td>$1200</td>
+                                    <td><img src="http://localhost/Hotel/public/Uppictures/<?php echo  $room['image'] ;?>" alt="" srcset="" width="50px"></td>
+                                    <td><?php echo $room['type'] ;?></td>
+                                    <td><?php echo $room['suite_type'] ;?></td>
+                                    <td><?php echo $room['capacity'] ;?></td>
+                                    <td><?php echo $room['price' ] ;?></td>
+                                    <td><?php echo $room['description'] ;?></td>
                                     <td>
-                                    <a href="#" style="text-decoration:none;" ><i class="fa-solid fa-pen text-warning"></i> </a>
+                                    <a href="http://localhost/Hotel/public/Admin/up/<?php echo  $room['id'] ; ?>" style="text-decoration:none;" ><i class="fa-solid fa-pen text-warning"></i> </a>
                                     <a href="#" style="text-decoration:none;" > <i class="fa-solid fa-trash text-danger"></i> </a>
                                     </td>
                                 </tr>
+                            <?php };?> 
                             </tbody>
                         </table>
                     </div>
