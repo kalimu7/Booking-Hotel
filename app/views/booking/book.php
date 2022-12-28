@@ -1,6 +1,10 @@
+<?php 
+    if(!isset($_SESSION['user'])){
+        header('Location:http://localhost/Hotel/public/User/login');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Find Pestana CR7</a>
+                        <a class="nav-link text-dark " href="#">Find Pestana CR7</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark " href="#">Community</a>
@@ -36,11 +40,33 @@
                         <a class="nav-link text-dark " href="#">About </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nv text-white  log" href="#">LOGIN</a>
+                        <a class="nav-link nv text-white  log logbtn" href="#">LOGIN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nv text-white log " href="#">SIGN UP</a>
+                        <a class="nav-link nv text-white log signbtn" href="#">SIGN UP</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link nv text-white log logout" href="http://localhost/Hotel/public/User/out">Log out</a>
+                    </li>
+                    <?php
+                            if(isset($_SESSION['user']) || isset($_SESSION['admin'])){
+                            echo "<script type=\"text/javascript\">
+
+                            document.querySelector('.logbtn').style.display='none';
+                            document.querySelector('.signbtn').style.display='none';
+                            document.querySelector('.logout').style.display='block';
+                            
+                             </script>";
+                            }else{
+                                echo "<script type=\"text/javascript\">
+
+                            document.querySelector('.logbtn').style.display='block';
+                            document.querySelector('.signbtn').style.display='block';
+                            document.querySelector('.logout').style.display='none';
+                            
+                             </script>";
+                            }
+                    ?>
                 </ul>
 
             </div>
@@ -82,12 +108,12 @@
         <div class="book d-flex items-center ">
             <div class="date" data-provide="datepicker">
                 <label for="date">From</label>
-                <input type="date" id="date" class="form-control d-block" value="2022-12-20" min="2022-12-20"
+                <input type="date" id="date" class="form-control d-block" 
                     max="2023-12-20">
             </div>
             <div class="date" data-provide="datepicker">
                 <label for="date">To</label>
-                <input type="date" id="date" class="form-control d-block" value="2022-12-20" min="2022-12-20"
+                <input type="date" id="date" class="form-control d-block" 
                     max="2023-12-20">
             </div>
             <div class="date" data-provide="datepicker">
@@ -128,6 +154,9 @@
     </form>
     <!-- ****End of booking section******** -->
     <!-- *****************More content************* -->
+    <?php
+    
+    ?>
     <div class="bg-image d-flex justify-content-center align-items-center">
         <div class="col-sm-8">
             <div class="card bg-dark text-white" style="--bs-bg-opacity: .8; height:400px;">
@@ -143,6 +172,9 @@
             </div>
         </div>
     </div>
+    <?php
+    
+    ?>
     <!-- *****************More content************* -->
     <!-- *****************choose a room***************** -->
     <div class="text-center hrrr">

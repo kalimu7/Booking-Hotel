@@ -1,3 +1,8 @@
+<?php 
+if(!isset($_SESSION['admin'])){
+        header('Location:http://localhost/Hotel/public/User/login');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +39,7 @@
                         class="fas fa-comment-dots me-2"></i>Chat</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-map-marker-alt me-2"></i>Outlet</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                <a href="http://localhost/Hotel/public/User/out" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
@@ -59,10 +64,15 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>John Doe
+                                <i class="fas fa-user me-2"></i><?php if(isset($_SESSION['name'])){
+                                    echo $_SESSION['name']; 
+                                    } ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
+                                <li><a class="dropdown-item" href="#"><?php if(isset($_SESSION['email'])){
+                                    echo $_SESSION['email']; 
+                                    } ?></a></li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
                                 <li><a class="dropdown-item" href="#">Logout</a></li>
                             </ul>
@@ -145,7 +155,7 @@
                                     <td><?php echo $room['description'] ;?></td>
                                     <td>
                                     <a href="http://localhost/Hotel/public/Admin/up/<?php echo  $room['id'] ; ?>" style="text-decoration:none;" ><i class="fa-solid fa-pen text-warning"></i> </a>
-                                    <a href="#" style="text-decoration:none;" > <i class="fa-solid fa-trash text-danger"></i> </a>
+                                    <a href="http://localhost/Hotel/public/Admin/delete/<?php echo  $room['id'] ; ?>" style="text-decoration:none;" > <i class="fa-solid fa-trash text-danger"></i> </a>
                                     </td>
                                 </tr>
                             <?php };?> 

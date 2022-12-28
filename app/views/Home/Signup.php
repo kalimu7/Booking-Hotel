@@ -20,7 +20,7 @@
 
     <!--**********************navbar*************************-->
     <nav class="navbar navbar-expand-lg fixed-top" style="z-index:10;">
-        <div class="container">
+        <div class="container">        
             <a class="navbar-brand" href="#"><img src="http://localhost/Hotel/public/assets/logo.png" width="120px"
                     alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -68,41 +68,42 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
-                                    <form>
+                                    <form action="http://localhost/Hotel/public/User/signup" method="POST" >
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <span class="h1 fw-bold mb-0"><img src="http://localhost/Hotel/public/assets/logo.png" height="100px"; alt="" srcset=""></span>
                                         </div>
-
+                                        <?php
+                                        if(isset($data['msg'])){
+                                            echo '<span class="text-danger" >' .$data['msg']. '</span>';
+                                        }
+                                        ?>
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign up</h5>
 
-                                        <div class="form-outline mb-4">
-                                            <input type="text" id="form2Example27"
-                                                class="form-control form-control-lg" />
+                                        <div class="form-outline mb-4 text-start">
                                             <label class="form-label" for="form2Example27">Name</label>
+                                            <input type="text" id="form2Example27" class="form-control form-control-lg" name="Name" />
                                         </div>
 
 
-                                        <div class="form-outline mb-4">
-                                            <input type="email" id="form2Example17"
-                                                class="form-control form-control-lg" />
-                                            <label class="form-label" for="form2Example17">Email address</label>
+                                        <div class="form-outline mb-4 text-start">
+                                            <label class="form-label " for="form2Example17">Email address</label>
+                                            <input type="email" id="form2Example17" class="form-control form-control-lg" name="Email" />
                                         </div>
 
                                         
-                                        <div class="form-outline mb-4">
-                                            <input type="password" id="form2Example27"
-                                                class="form-control form-control-lg" />
+                                        <div class="form-outline mb-4 text-start">
                                             <label class="form-label" for="form2Example27">Password</label>
+                                            <input type="password" id="form2Example27" class="form-control form-control-lg" name="password" />
                                         </div>
 
                                         <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="button">Sign up</button>
+                                            <button name="register" class="btn btn-dark btn-lg btn-block" type="submit">Sign up</button>
                                         </div>
 
                                         
-                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a
-                                                href="http://localhost/Hotel/public/User/login" style="color: #393f81;">Login here</a></p>
+                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account?
+                                         <a href="http://localhost/Hotel/public/User/login" style="color: #393f81;">Login here</a></p>
                                         <a href="#!" class="small text-muted">Terms of use.</a>
                                         <a href="#!" class="small text-muted">Privacy policy</a>
                                     </form>

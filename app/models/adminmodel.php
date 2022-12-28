@@ -57,10 +57,16 @@
             $stm->execute();
             $stm-> null;
         }
-        public function remove(){
+        public function remove($id){
             $coon = $this->connect();
-            $stm = $conn->prepare("");
+            $stm = $coon->prepare("DELETE FROM chambre WHERE id = :id");
+            $stm->BindParam(':id',$id);
+            $stm->execute();
+            $stm-> null;
         }
+
+        
+
     }
 
 ?>

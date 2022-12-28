@@ -70,11 +70,12 @@ class Admin extends controller{
             header('Location:http://localhost/Hotel/public/Admin/display');
         }
     }
+    }
     public function delete($id){
         $model = $this->model('adminmodel');
-        
+        $model->remove($id);
+        header('Location:http://localhost/Hotel/public/Admin/display');
     }
-    
-}
+
 }
 ?>
