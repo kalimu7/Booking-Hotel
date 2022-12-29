@@ -131,6 +131,11 @@
     <!-- *****************choose a room***************** -->
     <div class="text-center hrrr">
         <hr>
+        <?php 
+            if(isset($data['msg'])){
+                echo '<h2 style="font-size: 20px; color:red;" >'. $data['msg'] .'</h2>';
+            }
+        ?>
         <h2 style="color: #363636; "> Choose a room</h2>
         <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugit harum numquam deleniti minus
             porro maiores atque iure,<br> hic similique dolorum laboriosam rerum impedit sapiente possimus explicabo
@@ -141,9 +146,9 @@
         <?php
             foreach($data as $d){
         ?>
-        
+            <form action="http://localhost/Hotel/public/User/booking" method="POST" style="display:flex; justify-content:center;" >
             <div class="col-10 col-sm-3 imggg m-2" style="background: url('http://localhost/Hotel/public/Uppictures/<?= $d['image'] ?>');">
-            <form action="http://localhost/Hotel/public/User/booking" method="POST" >
+            
                 <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
                     <?= $d['price'] ?>/night</p>
                 <div class="card ">
@@ -157,8 +162,8 @@
                         <button  type="submit" name="book" class="BookNow text-center">Book Now</button>
                     </div>
                 </div>
-                </form>
             </div>
+        </form>
             <?php
         };
         ?>

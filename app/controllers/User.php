@@ -87,17 +87,22 @@
                 $_SESSION['in'] = $_POST["date_entree"];
                 $_SESSION['out'] = $_POST["date_sortie"];
             }
+            // die(print_r($_POST));
 
             if(!empty($suite)){
                 
                 $model = $this->model('search');
                 $data = $model->recherche1($type,$suite);
-                $this->view('booking/room',$data);   
+                $this->view('booking/room',$data);
+                exit;   
             }
+           
             $model = $this->model('search');
             $data = $model->recherche($type);
+            // die(print_r($data));
             $this->view('booking/room',$data);
-            exit;
+           
+            
         }
 
 
@@ -108,10 +113,15 @@
                 $idroom = $_POST['idd'];
                 $iduser = $_SESSION['id_user'];
             }
+            if(empty($ent) || empty($sort) || empty($idroom) || empty($iduser)){
+                $msg='you didnt fill all the inputs';               
+                $this->view('booking/room',['msg'  => $msg ]);
+            }
             // echo 'date entree '.$ent .' and '. $sort .' and '. $idroom .' and ' .$iduser;
             $model = $this->model('search');
-            $model->book($ent,$sort,$idroom,$iduser);  
-                     
+            $model->book($ent,$sort,$idroom,$iduser);
+            $msg = 'you have booked your room sussefully';  
+            $this->view('booking/room',['msg'  => $msg ]);
         }
 
     }
