@@ -86,6 +86,7 @@
                 $suite = $_POST["suite"];
                 $_SESSION['in'] = $_POST["date_entree"];
                 $_SESSION['out'] = $_POST["date_sortie"];
+                $_SESSION['invit'] = $_POST['guests'];
             }
             // die(print_r($_POST));
 
@@ -105,13 +106,24 @@
             
         }
 
+        public function inv(){
+            
+            $this->view('booking/guest');
+            $_SESSION['idroom'] = $_POST['idd'];
+            $rooomid = $_SESSION['idroom'];
+            $useeerid = $_SESSION['id_user'];
+            $entttttt = $_SESSION['in'];
+            $srtttttt = $_SESSION['out'];
+        }
 
         public function booking(){
+
             if(isset($_POST['book'])){
                 $ent = $_SESSION['in'];
                 $sort = $_SESSION['out'];
                 $idroom = $_POST['idd'];
                 $iduser = $_SESSION['id_user'];
+                $_SESSION['idroom'] = $idroom;
             }
             if(empty($ent) || empty($sort) || empty($idroom) || empty($iduser)){
                 $msg='you didnt fill all the inputs';               
@@ -123,7 +135,26 @@
             $msg = 'you have booked your room sussefully';  
             $this->view('booking/room',['msg'  => $msg ]);
         }
+        public function addguest(){
+
+            if(isset($_POST['ajoute'])){
+                $inputlength = $_POST['length'];
+                $model = $this->model('search');
+                // $model->book();
+                $idReservation = $model->getmaxid();
+                $i = 1;
+                while($i <= $inputlength){
+                    $fullname = $_POST['invf'.$i];
+                    $datebirth = $_POST['invb'.$i];
+                    $model->addguest($fullname,$datebirth,$idReservation);
+                    $i++;
+                }
+            }
+            // var_dump($_SESSION);
+    
+        }
 
     }
+   
 
 ?>

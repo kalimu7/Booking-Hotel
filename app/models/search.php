@@ -25,6 +25,23 @@ class search extends Connection{
         $suite = $stm->fetchAll();
         return $suite;
     }
+    public function getmaxid(){
+        $conn = $this->connect();
+        $stm = $conn->prepare("SELECT MAX(id) as laast FROM reservation");
+        $stm->execute();
+        $idddd = $stm->fetchAll();
+        // var_dump ($idddd);
+        $id = $idddd[0]['laast'];
+        // echo $idddd['laast'];
+        return $id;
+    }
+    public function addguest($fullname,$datebirth,$idreservation){
+
+        $conn = $this->connect();
+        $stm = $conn->prepare("INSERT INTO `guest`( `fullname`, `dbirth`, `idreservation`) VALUES ('$fullname','$datebirth','$idreservation' )");
+        $stm->execute();
+        
+    }
     public function book($ent,$sort,$idroom,$iduser){
         $conn = $this->connect();
         $stm = $conn->prepare("INSERT INTO `reservation` ( `checkin`, `checkout`, `idroom`, `iduser`) VALUES ('$ent','$sort',$idroom,'$iduser')");
@@ -33,7 +50,6 @@ class search extends Connection{
         // $stm->bindParam(':iduser',$iduser);
         // $stm->bindParam(':isroom',$idroom);
         $stm->execute();
-
     }
 }
 

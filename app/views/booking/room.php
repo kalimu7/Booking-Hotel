@@ -87,7 +87,7 @@
             </div>
             <div class="date" data-provide="datepicker">
                 <label for="date">To</label>
-                <input type="date" id="date" class="form-control d-block"  max="2023-12-20"  name="date_sortie" >
+                <input type="date" id="date" class="form-control d-block dateout"  max="2023-12-20"  name="date_sortie" >
             </div>
             <div class="date" data-provide="datepicker">
                 <label for="">Chmabre</label>
@@ -101,7 +101,7 @@
                 <label for="">Suite</label>
                 <select class="form-select" aria-label="Default select example" name="suite">
                     <option value="" selected></option>
-                    <option >Standard suite rooms</option>
+                    <option value="Standard suite rooms" >Standard suite rooms</option>
                     <option value="Junior">Junior</option>
                     <option value="Presidential suite">Presidential suite</option>
                     <option value="Penthouse suites">Penthouse suites</option>
@@ -111,10 +111,10 @@
             </div>
             <div class="date" data-provide="datepicker" id="suite">
                 <label for="">Person</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" name="guests">
                     <option value="" selected></option>
-                    <option >01</option>
-                    <option value="02">02</option>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
                     <option value="2">03</option>
                     <option value="3">04</option>
                     <option value="3">05</option>
@@ -125,8 +125,8 @@
                 <button type="submit" name="search" class="btn bknow">Search</button>
             </div>
         </div>
-
     </form>
+    <form action=""></form>
     <!-- ****End of booking section******** -->
     <!-- *****************choose a room***************** -->
     <div class="text-center hrrr">
@@ -146,9 +146,9 @@
         <?php
             foreach($data as $d){
         ?>
-            <form action="http://localhost/Hotel/public/User/booking" method="POST" style="display:flex; justify-content:center;" >
-            <div class="col-10 col-sm-3 imggg m-2" style="background: url('http://localhost/Hotel/public/Uppictures/<?= $d['image'] ?>');">
             
+            <div class="col-10 col-sm-3 imggg m-2" style="background: url('http://localhost/Hotel/public/Uppictures/<?= $d['image'] ?>');">
+            <form action="http://localhost/Hotel/public/User/inv" method="POST"  >
                 <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
                     <?= $d['price'] ?>/night</p>
                 <div class="card ">
@@ -162,8 +162,8 @@
                         <button  type="submit" name="book" class="BookNow text-center">Book Now</button>
                     </div>
                 </div>
+            </form>
             </div>
-        </form>
             <?php
         };
         ?>

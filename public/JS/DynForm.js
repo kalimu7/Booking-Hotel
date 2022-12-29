@@ -1,4 +1,14 @@
 const btn = document.querySelector('.bknow');
+const out = document.querySelector('.dateout');
+const inn = document.querySelector('#date');
+const input = document.querySelector('#guests');
+
+
+let today = new Date().toISOString().split('T')[0];
+inn.setAttribute('min',today);
+out.setAttribute('min',today);
+
+
 
 
 document.querySelector('#children').style.display="none";
