@@ -87,6 +87,8 @@
                 $_SESSION['in'] = $_POST["date_entree"];
                 $_SESSION['out'] = $_POST["date_sortie"];
                 $_SESSION['invit'] = $_POST['guests'];
+                $_SESSION['suite_type'] = $type;
+                // $_SESSION['suite_type'] = $suite;
             }
             // die(print_r($_POST));
 
@@ -140,8 +142,10 @@
             if(isset($_POST['ajoute'])){
                 $inputlength = $_POST['length'];
                 $model = $this->model('search');
-                // $model->book();
+                // book($ent,$sort,$idroom,$iduser)
+                $model->book($_SESSION['in'],$_SESSION['out'],$_SESSION['idroom'],$_SESSION['id_user']);
                 $idReservation = $model->getmaxid();
+                // echo 'the last id is '.$idReservation;
                 $i = 1;
                 while($i <= $inputlength){
                     $fullname = $_POST['invf'.$i];
@@ -149,6 +153,8 @@
                     $model->addguest($fullname,$datebirth,$idReservation);
                     $i++;
                 }
+                $msg='your suite booked successfully';
+                $this->view('booking/room',['suite' => $msg ]);
             }
             // var_dump($_SESSION);
     

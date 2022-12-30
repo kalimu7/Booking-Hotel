@@ -79,10 +79,11 @@
                 <div class="text-center">
                     <input name="length" type="Number" id="invit" min="1" max="6" style="width:500px;">
                 </div>
-                <div class="col-md-5 container-invit d-flex flex-column justify-content-center">
-
+                <div class="d-flex justify-content-center ">
+                    <div class="col-md-5 container-invit d-flex flex-column justify-content-center">
                 </div>
-                <button type="submit" name="ajoute">Submit</button>
+                </div>
+                <button  style="margin:auto;" class="btn btn-warning" type="submit" name="ajoute">Submit</button>
         </form>
     </div>
 

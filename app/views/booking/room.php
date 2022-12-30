@@ -83,11 +83,11 @@
         <div class="book d-flex items-center ">
             <div class="date" data-provide="datepicker">
                 <label for="date">From</label>
-                <input type="date" id="date" class="form-control d-block" max="2023-12-20"  name="date_entree" >
+                <input type="date" id="date" class="form-control d-block" max="2023-12-20" name="date_entree">
             </div>
             <div class="date" data-provide="datepicker">
                 <label for="date">To</label>
-                <input type="date" id="date" class="form-control d-block dateout"  max="2023-12-20"  name="date_sortie" >
+                <input type="date" id="date" class="form-control d-block dateout" max="2023-12-20" name="date_sortie">
             </div>
             <div class="date" data-provide="datepicker">
                 <label for="">Chmabre</label>
@@ -101,7 +101,7 @@
                 <label for="">Suite</label>
                 <select class="form-select" aria-label="Default select example" name="suite">
                     <option value="" selected></option>
-                    <option value="Standard suite rooms" >Standard suite rooms</option>
+                    <option value="Standard suite rooms">Standard suite rooms</option>
                     <option value="Junior">Junior</option>
                     <option value="Presidential suite">Presidential suite</option>
                     <option value="Penthouse suites">Penthouse suites</option>
@@ -135,6 +135,9 @@
             if(isset($data['msg'])){
                 echo '<h2 style="font-size: 20px; color:red;" >'. $data['msg'] .'</h2>';
             }
+            if(isset($data['suite'])){
+                echo '<h2 style="font-size: 20px; color:red;" >'. $data['suite'] .'</h2>';
+            }
         ?>
         <h2 style="color: #363636; "> Choose a room</h2>
         <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugit harum numquam deleniti minus
@@ -142,32 +145,38 @@
             velit!</p>
     </div>
     <div class="row my-2 justify-content-center">
-    
+
         <?php
             foreach($data as $d){
         ?>
-            
-            <div class="col-10 col-sm-3 imggg m-2" style="background: url('http://localhost/Hotel/public/Uppictures/<?= $d['image'] ?>');">
-            <form action="http://localhost/Hotel/public/User/inv" method="POST"  >
+
+        <div class="col-10 col-sm-3 imggg m-2"
+            style="background: url('http://localhost/Hotel/public/Uppictures/<?= $d['image'] ?>');">
+
+
+            <form method="POST" action="http://localhost/Hotel/public/User/<?php
+             if($_SESSION['suite_type'] == 'suite'){ echo 'inv';}else{echo 'booking';} 
+             ?>">
                 <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
                     <?= $d['price'] ?>/night</p>
                 <div class="card ">
                     <div class="card-body bg-dark text-white" style="--bs-bg-opacity:0.9; height:200px; ">
                         <hr>
                         <h4><?= $d['type'] ?></h4>
-                        <p class="card-text"><?= $d['description'] ?></p>
-                        <input type="text" name='idd' placeholder="id user" value="<?= $d['id']  ?>"  style="display:none;"    > 
-                        <input type="date"   value="<?=$_SESSION['in']?>"  name="entree"  style="display:none;"    > 
-                        <input type="date"   value="<?=$_SESSION['out']?>"  name="sortie"  style="display:none;"    > 
-                        <button  type="submit" name="book" class="BookNow text-center">Book Now</button>
+                        <p class="card-text"><?= $d['description'] ?> </p>
+                        <input type="text" name='idd' placeholder="id user" value="<?= $d['id']  ?>"
+                            style="display:none;">
+                        <input type="date" value="<?=$_SESSION['in']?>" name="entree" style="display:none;">
+                        <input type="date" value="<?=$_SESSION['out']?>" name="sortie" style="display:none;">
+                        <button type="submit" name="book" class="BookNow text-center">Book Now</button>
                     </div>
                 </div>
             </form>
-            </div>
-            <?php
-        };
+        </div>
+        <?php
+            };
         ?>
-        
+
         <!-- <div class="col-10 col-sm-3 imggg m-2">
             <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
                 $150/night</p>
