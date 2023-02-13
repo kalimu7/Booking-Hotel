@@ -61,11 +61,11 @@
                 <div class="col col-xl-10">
                     <div class="card" style="border-radius: 1rem;">
                         <div class="row g-0">
-                            <div class="col-md-6 col-lg-5  d-md-block">
+                            <div class="col-md-6 col-lg-6  d-md-block">
                                 <img src="http://localhost/Hotel/public/assets/image1.jpg"
                                     alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;height:100%;" />
                             </div>
-                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="col-md-6 col-lg-6 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
                                     <form action="http://localhost/Hotel/public/User/signup" method="POST" >

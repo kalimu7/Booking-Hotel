@@ -104,7 +104,7 @@
         </button>
     </div>
     <!-- ****booking section******** -->
-    <form action="">
+    <!-- <form action="">
         <div class="book d-flex items-center ">
             <div class="date" data-provide="datepicker">
                 <label for="date">From</label>
@@ -151,7 +151,10 @@
             </div>
         </div>
         
-    </form>
+    </form> -->
+    <div class="text-center py-5">
+        <a href="http://localhost/Hotel/public/User/search" class="btn text-white" style="background-color: #cb8670;">Make Your Booking NOW</a>
+    </div>
     <!-- ****End of booking section******** -->
     <!-- *****************More content************* -->
     <?php
@@ -167,7 +170,7 @@
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.With
                             supporting text below as a natural lead-in to additional content.</p>
                     </div>
-                    <a href="#" class="btn more">Road More</a>
+                    <a href="http://localhost/Hotel/public/User/search" class="btn more">Road More</a>
                 </div>
             </div>
         </div>
@@ -193,7 +196,7 @@
                     <hr>
                     <h4>Deluxe Room</h4>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="BookNow text-center">Book Now</a>
+                    <a href="http://localhost/Hotel/public/User/search" class="BookNow text-center">Book Now</a>
                 </div>
             </div>
         </div>
@@ -205,7 +208,7 @@
                     <hr>
                     <h4>Double suite</h4>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="BookNow text-center">Book Now</a>
+                    <a href="http://localhost/Hotel/public/User/search" class="BookNow text-center">Book Now</a>
                 </div>
             </div>
         </div>
@@ -217,7 +220,7 @@
                     <hr>
                     <h4>Single Room</h4>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="BookNow text-center">Book Now</a>
+                    <a href="http://localhost/Hotel/public/User/search" class="BookNow text-center">Book Now</a>
                 </div>
             </div>
         </div>

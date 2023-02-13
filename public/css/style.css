@@ -78,7 +78,7 @@ li .log{
 }
 
 .imggg{
-    /* background: url("http://localhost/Hotel/public/assets/card1.jpg"); */
+    background: url("http://localhost/Hotel/public/assets/card1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

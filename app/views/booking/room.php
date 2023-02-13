@@ -1,7 +1,7 @@
 <?php 
-    // if(!isset($_SESSION['user'])){
-    //     header('Location:http://localhost/Hotel/public/User/login');
-    // }
+    if(!isset($_SESSION['user'])){
+        header('Location:http://localhost/Hotel/public/User/login');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top" style="z-index:10;">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="http://localhost/Hotel/public/assets/logo.png" width="120px"
+            <a class="navbar-brand" href="http://localhost/Hotel/public/User/book"><img src="http://localhost/Hotel/public/assets/logo.png" width="120px"
                     alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -132,11 +132,16 @@
     <div class="text-center hrrr">
         <hr>
         <?php 
-            if(isset($data['msg'])){
-                echo '<h2 style="font-size: 20px; color:red;" >'. $data['msg'] .'</h2>';
-            }
-            if(isset($data['suite'])){
-                echo '<h2 style="font-size: 20px; color:red;" >'. $data['suite'] .'</h2>';
+            // if(isset($data['msg'])){
+            //     echo '<h2 style="font-size: 20px; color:red;" >'. $data['msg'] .'</h2>';
+            // }
+            // if(isset($data['suite'])){
+            //     echo '<h2 style="font-size: 20px; color:red;" >'. $data['suite'] .'</h2>';
+            // }
+            if( isset($_COOKIE['msgf']  )){
+                echo '<h2 style="font-size: 20px; color:red;" >'. $_COOKIE['msgf'] .'</h2>';
+            }if(isset($_COOKIE['msg'])){
+                echo '<h2 style="font-size: 20px; color:green;" >'. $_COOKIE['msg'] .'</h2>';
             }
         ?>
         <h2 style="color: #363636; "> Choose a room</h2>

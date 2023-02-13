@@ -51,7 +51,7 @@
                 $_SESSION['name'] = $data->name;
                 $_SESSION['email'] = $name;
                 header('Location:http://localhost/Hotel/public/admin/display');
-            }elseif(password_verify($password,$data->password) && ($data->role == 0)){
+            }elseif(password_verify($password,$data->password)){
                 $_SESSION['user'] = true;
                 $_SESSION['id_user'] = $data->id;
                 $_SESSION['name'] = $data->name;
@@ -116,6 +116,7 @@
             $useeerid = $_SESSION['id_user'];
             $entttttt = $_SESSION['in'];
             $srtttttt = $_SESSION['out'];
+            
         }
 
         public function booking(){
@@ -128,14 +129,19 @@
                 $_SESSION['idroom'] = $idroom;
             }
             if(empty($ent) || empty($sort) || empty($idroom) || empty($iduser)){
-                $msg='you didnt fill all the inputs';               
-                $this->view('booking/room',['msg'  => $msg ]);
+                $msgf='you didnt fill all the inputs';
+                setcookie('msgf',$msgf,time()+5);     
+                // $this->view('booking/room',['msg'  => $msg ]);
+                header('Location:http://localhost/Hotel/public/User/search');
+                exit;
             }
             // echo 'date entree '.$ent .' and '. $sort .' and '. $idroom .' and ' .$iduser;
             $model = $this->model('search');
             $model->book($ent,$sort,$idroom,$iduser);
             $msg = 'you have booked your room sussefully';  
-            $this->view('booking/room',['msg'  => $msg ]);
+            setcookie('msg',$msg,time()+5);
+            // $this->view('booking/room',['msg'  => $msg ]);
+            header('Location:http://localhost/Hotel/public/User/search');
         }
         public function addguest(){
 
@@ -158,6 +164,9 @@
             }
             // var_dump($_SESSION);
     
+        }
+        public function dsh(){
+            $this->view('booking/userdash');
         }
 
     }
