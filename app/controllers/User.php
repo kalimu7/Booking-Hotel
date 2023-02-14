@@ -105,7 +105,6 @@
             // die(print_r($data));
             $this->view('booking/room',$data);
            
-            
         }
 
         public function inv(){

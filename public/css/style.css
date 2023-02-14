@@ -76,7 +76,20 @@ li .log{
     background-color: #cb8670;
     margin: 0 auto;
 }
+.moree{
+    background-color: White;
+    color: #cb8670;
+    margin: 0 auto;
+}
+.carousel-caption{
+    position: absolute;
+    top: 45%;
+    
+}
 
+.hrrra{
+    margin-top: 250px;
+}
 .imggg{
     background: url("http://localhost/Hotel/public/assets/card1.jpg");
     background-size: cover;
@@ -87,8 +100,24 @@ li .log{
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 10px;
+    
 }
-
+.forcard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.card-bodyy{
+    border: 2px solid #cb8670;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    
+}
 .card-body{
     border: 2px solid #cb8670;
     display: flex;
@@ -96,6 +125,8 @@ li .log{
     /* align-items: center; */
     flex-direction: column;
     text-align: center;
+    position: absolute;
+    top: 0;
 }
 .BookNow{
     background-color: #cb8670;

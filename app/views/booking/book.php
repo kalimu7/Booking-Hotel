@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top" style="z-index:10;">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="http://localhost/Hotel/public/assets/logo.png" width="120px"
+    <nav class="navbar  navbar-expand-lg fixed-top" style="z-index:10;">
+        <div class="container bg-light">
+            <a class="navbar-brand" href="http://localhost/Hotel/public/User/book"><img src="http://localhost/Hotel/public/assets/logo.png" width="120px"
                     alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -72,37 +72,44 @@
             </div>
         </div>
     </nav>
-    <div id="carouselExampleIndicators" class="carousel slide" style="z-index:5;" data-bs-ride="true">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="http://localhost/Hotel/public/assets/1.jpg" class="d-block w-100" alt="...">
+            <img src="http://localhost/Hotel/public/assets/1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption  d-md-block">
+                <h1>Welcome To Pestana Hotels</h1>
+                <a href="http://localhost/Hotel/public/User/search" class="btn btn-secondary moree text-center">Book Now</a>
+            </div>
             </div>
             <div class="carousel-item">
-                <img src="http://localhost/Hotel/public/assets/2.jpg" class="d-block w-100" alt="...">
+            <img src="http://localhost/Hotel/public/assets/2.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            <h1>Welcome To Pestana Hotels</h1>
+                <a href="http://localhost/Hotel/public/User/search" class="btn btn-secondary moree text-center">Book Now</a>
+            </div>
             </div>
             <div class="carousel-item">
-                <img src="http://localhost/Hotel/public/assets/3.jpg" class="d-block w-100" alt="...">
+            <img src="http://localhost/Hotel/public/assets/3.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            <h1>Welcome To Pestana Hotels</h1>
+                <a href="http://localhost/Hotel/public/User/search" class="btn btn-secondary moree text-center">Book Now</a>
+            </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+        </div>
     <!-- ****booking section******** -->
     <!-- <form action="">
         <div class="book d-flex items-center ">
@@ -163,7 +170,7 @@
     <div class="bg-image d-flex justify-content-center align-items-center">
         <div class="col-sm-8">
             <div class="card bg-dark text-white" style="--bs-bg-opacity: .8; height:400px;">
-                <div class="card-body text-center d-flex flex-column justify-content-between">
+                <div class="card-bodyy text-center d-flex flex-column justify-content-between">
                     <hr>
                     <div>
                         <h2 class="card-title fs-1 " style="font-family:Arial;">Check Your Bookings</h2>
@@ -227,11 +234,11 @@
 
     </div>
     <!-- ******************about us***************** -->
-    <div class="text-center hrrr">
+    <div class="text-center hrrra">
         <hr>
         <h2 style="color: #363636; "> About us</h2>
     </div>
-    <div class="container">
+    <div class="container " >
         <div class="row justify-content-center gap-6" style="margin:80px 0; ">
             <div class="col-12 col-sm-6 d-flex flex-column justify-content-between">
                 <h3 style="color: #363636; margin-top:10px; font-size: 48px;"> A Place to Remember</h3>
@@ -248,7 +255,7 @@
                 <a href="#" class="abouta text-center" style="margin-bottom:20px;">Book Now</a>
             </div>
             <div class="col-12  col-sm-6">
-                <img src="http://localhost/Hotel/public/assets/about.jpg" width="450px" height="380px" alt="">
+                <img  src="http://localhost/Hotel/public/assets/about.jpg" class="imgabout" width="100%" height="380px" alt="">
             </div>
 
         </div>

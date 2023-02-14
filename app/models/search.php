@@ -5,7 +5,18 @@ class search extends Connection{
 
     public function recherche($type){
         $conn = $this->connect();
-        $stm = $conn->prepare("SELECT chambre.* FROM chambre LEFT JOIN reservation ON chambre.id = reservation.idroom AND (:entt BETWEEN reservation.checkin AND reservation.checkout OR :srtt BETWEEN reservation.checkin AND reservation.checkout) WHERE reservation.idroom IS NULL and chambre.type = :typo ");
+        // SELECT chambre.* FROM chambre LEFT JOIN reservation ON chambre.id = reservation.idroom AND (:entt BETWEEN reservation.checkin AND reservation.checkout OR :srtt BETWEEN reservation.checkin AND reservation.checkout) WHERE reservation.idroom IS NULL and chambre.type = :typo 
+        $stm = $conn->prepare("
+        SELECT chambre.* FROM chambre
+        WHERE chambre.type = :typo 
+        AND chambre.id NOT IN (
+          SELECT reservation.idroom FROM reservation 
+          WHERE (
+              (:entt BETWEEN reservation.checkin AND reservation.checkout) 
+              OR (:srtt BETWEEN reservation.checkin AND reservation.checkout)
+              OR (reservation.checkin BETWEEN :entt AND :srtt)
+          )
+        )");
         
         $stm->BindParam(':typo',$type);
         $stm->BindParam(':entt',$_SESSION['in']);
@@ -17,10 +28,24 @@ class search extends Connection{
         return $doubleSingle;
     }
     public function recherche1($type,$type_suite){
+        // print_r($type_suite);
+        // die;
         $conn = $this->connect();
-        $stm = $conn->prepare("SELECT chambre.* FROM chambre LEFT JOIN reservation ON chambre.id = reservation.idroom AND ('2022-12-09' BETWEEN reservation.checkin AND reservation.checkout OR '2022-12-09' BETWEEN reservation.checkin AND reservation.checkout) WHERE reservation.idroom IS NULL and chambre.type = :type  and chambre.suite_type = :typesuite ");
+        $stm = $conn->prepare("
+        SELECT chambre.* FROM chambre
+        WHERE chambre.type = :type AND chambre.suite_type = :typesuite
+        AND chambre.id NOT IN (
+          SELECT reservation.idroom FROM reservation 
+          WHERE (
+              (:entt BETWEEN reservation.checkin AND reservation.checkout) 
+              OR (:srtt BETWEEN reservation.checkin AND reservation.checkout)
+              OR (reservation.checkin BETWEEN :entt AND :srtt)
+          )
+        )");
         $stm->BindParam(':type',$type);
         $stm->BindParam(':typesuite',$type_suite);
+        $stm->BindParam(':entt',$_SESSION['in']);
+        $stm->BindParam(':srtt',$_SESSION['out']);
         $stm->execute();
         $suite = $stm->fetchAll();
         return $suite;

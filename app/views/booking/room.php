@@ -155,16 +155,17 @@
             foreach($data as $d){
         ?>
 
-        <div class="col-10 col-sm-3 imggg m-2"
+        <div class="col-10 col-sm-3 imggg m-2 "
             style="background: url('http://localhost/Hotel/public/Uppictures/<?= $d['image'] ?>');">
 
 
-            <form method="POST" action="http://localhost/Hotel/public/User/<?php
+            <form method="POST" class="forcard" action="http://localhost/Hotel/public/User/<?php
              if($_SESSION['suite_type'] == 'suite'){ echo 'inv';}else{echo 'booking';} 
              ?>">
                 <p class="card-title  text-white bg-dark p-2 frooooom" style="width:fit-content;margin: 0 auto;  ">From
-                    <?= $d['price'] ?>/night</p>
-                <div class="card ">
+                    <?= $d['price'] ?>/night
+                </p>
+                <div class="card "style="margin-left:25px">
                     <div class="card-body bg-dark text-white" style="--bs-bg-opacity:0.9; height:200px; ">
                         <hr>
                         <h4><?= $d['type'] ?></h4>
@@ -210,7 +211,7 @@
     </div>
 
     <!-- ****************footer************** -->
-    <footer class="footer row">
+    <footer class="footer row" style="margin-top:210px">
         <div class="col-12   col-lg-3 p-5">
             <img src="http://localhost/Hotel/public/assets/logo.png" width="120px" style="margin-bottom:10px;"> <br>
             <!-- <h4 class="text-white mb-10" >The Pestana CR7</h4> -->
