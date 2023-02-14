@@ -166,11 +166,11 @@
                 <div class="card-body text-center d-flex flex-column justify-content-between">
                     <hr>
                     <div>
-                        <h2 class="card-title fs-1 " style="font-family:Arial;">The Vocation Heaven</h2>
+                        <h2 class="card-title fs-1 " style="font-family:Arial;">Check Your Bookings</h2>
                         <p class="card-text">With supporting text below as a natural lead-in to additional content.With
                             supporting text below as a natural lead-in to additional content.</p>
                     </div>
-                    <a href="http://localhost/Hotel/public/User/search" class="btn more">Road More</a>
+                    <a href="http://localhost/Hotel/public/User/dsh" class="btn more">Your Bookings</a>
                 </div>
             </div>
         </div>

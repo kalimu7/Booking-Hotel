@@ -11,6 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <style>
 body {
     color: #566787;
@@ -139,48 +140,57 @@ table.table td i {
             <div class="table-title">
                 <div class="row justify-content-between">
                     <div class="col-sm-8"><h2>Add New Destination</h2></div> <br>
-                    <a class="btn btn-danger " href="">Log Out</a>
-                    <a class="btn btn-primary" href="">ADD</a>
+                    <a class="btn btn-danger " href="http://localhost/Hotel/public/User/book">Back</a>
+                    <!-- <a class="btn btn-primary" href=""></a> -->
                 </div>
             </div>
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>image</th>
                         <th>check in</th>
                         <th>check out</th>
-                        <th>Persons</th>
-                        <th>Actions</th>
+                        <th>description</th>
+                        <th>type</th>
+                        <th>price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($da = mysqli_fetch_assoc($data)){ ?>
+                    <?php 
+                        // print_r($data);
+                        // die;
+                        Foreach($data as $da){ 
+                    ?>
                     <tr>
                         <td>
-                            <?= $da['id'] ?>
+                        <?= $da['0'] ?>
                         </td>
                         <td>
-                        <img src="<?= BASE_URL_image ?><?php echo $da['image']; ?>" width="100px" >
+                            <?= $da['checkin'] ?>
                         </td>
                         <td>
-                        <?= $da['destination'] ?>
-                        
+                            <?= $da['checkout'] ?>
+                            
                         </td>
                         <td>
-                        <?= $da['description'] ?>
+                            <?= $da['description'] ?>
+                        </td>
+                        <td>
+                        <?= $da['type'] ?>
                         </td>
                         <td>
                         <?= $da['price'] ?>
                         </td>
                         <td>
-                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                            <a href="<?= BASE_URL ?>Admin/update/<?= $da['id'] ?>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="<?= BASE_URL ?>Admin/delete/<?= $da['id'] ?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            <!-- <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a> -->
+                            <!-- <a href=""><i class="bi bi-trash text-danger"></i></a>  -->
+                            <a href="http://localhost/Hotel/public/User/delete/<?= $da['0'] ?>" class="delete" title="Delete" data-toggle="tooltip"> <i class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>
 
-                    <?php };?>
+                    <?php
+                         };
+                    ?>
 
                 </tbody>
             </table>

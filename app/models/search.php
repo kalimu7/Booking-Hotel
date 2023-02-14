@@ -51,6 +51,20 @@ class search extends Connection{
         // $stm->bindParam(':isroom',$idroom);
         $stm->execute();
     }
+    public function dshb($iduser){
+        $conn = $this->connect();
+        $stm = $conn->prepare("SELECT * FROM `reservation` INNER JOIN chambre on reservation.idroom = chambre.id WHERE reservation.iduser = :iduser");
+        $stm->BindParam(':iduser',$iduser);
+        $stm->execute();
+        $data = $stm->FetchAll();
+        return $data;
+    }
+    public function sup($id){
+        $conn = $this->connect();
+        $stm = $conn->prepare("DELETE FROM `reservation` WHERE id = :idd ");
+        $stm->BindParam(':idd',$id);
+        $stm->execute();
+    }
 }
 
 ?>

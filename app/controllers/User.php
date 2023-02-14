@@ -166,7 +166,21 @@
     
         }
         public function dsh(){
-            $this->view('booking/userdash');
+            $model = $this->model('search');
+            $iduser = $_SESSION['id_user'];
+            $data = $model->dshb($iduser);
+            $this->view('booking/userdash',$data);
+
+            //SELECT * FROM `reservation` INNER JOIN chambre on reservation.iduser = 11 and chambre.id = reservation.idroom
+            //SELECT * FROM `reservation` INNER JOIN chambre on reservation.idroom = chambre.id WHERE reservation.iduser = 12;
+        }
+        public function delete($id){
+            $model = $this->model('search');
+            $model->sup($id);
+            header('Location:http://localhost/Hotel/public/User/dsh');
+            // echo $id;
+            // die;
+           
         }
 
     }
